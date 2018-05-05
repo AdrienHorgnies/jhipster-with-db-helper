@@ -19,47 +19,47 @@
     -->
     <changeSet id="20180503123138-1" author="jhipster">
         <createTable tableName="table_a">
-            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+            <column name="table_a_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="field_aa" type="varchar(255)">
+            <column name="column_aa" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="field_ab" type="integer">
+            <column name="column_ab" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="entityb_id" type="bigint">
+            <column name="table_b_fk" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
-            <column name="entityc_id" type="bigint">
+            <column name="table_c_fk" type="bigint">
                 <constraints nullable="true" />
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         
-        <createTable tableName="entitya_entityd">
-            <column name="entityds_id" type="bigint">
+        <createTable tableName="table_a_table_d">
+            <column name="table_d_fk" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="entityas_id" type="bigint">
+            <column name="table_a_fk" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="entityas_id, entityds_id" tableName="entitya_entityd"/>
+        <addPrimaryKey columnNames="table_a_fk, table_d_fk" tableName="table_a_table_d"/>
         
-        <createTable tableName="entitya_entitye">
-            <column name="entityes_id" type="bigint">
+        <createTable tableName="table_a_table_e">
+            <column name="table_e_fk" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="entityas_id" type="bigint">
+            <column name="table_a_fk" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="entityas_id, entityes_id" tableName="entitya_entitye"/>
+        <addPrimaryKey columnNames="table_a_fk, table_e_fk" tableName="table_a_table_e"/>
         
     </changeSet>
 </databaseChangeLog>

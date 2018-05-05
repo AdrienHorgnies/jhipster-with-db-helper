@@ -19,17 +19,17 @@
     -->
     <changeSet id="20180503131307-1" author="jhipster">
         <createTable tableName="table_f">
-            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+            <column name="table_f_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="field_fa" type="varchar(255)">
+            <column name="column_fa" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="field_fb" type="integer">
+            <column name="column_fb" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="entitya_id" type="bigint">
+            <column name="table_a_fk" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->

@@ -22,33 +22,35 @@ public class EntityA implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_a_id")
     private Long id;
 
-    @Column(name = "field_aa")
+    @Column(name = "column_aa")
     private String fieldAA;
 
-    @Column(name = "field_ab")
+    @Column(name = "column_ab")
     private Integer fieldAB;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(unique = true, name = "table_b_fk")
     private EntityB entityB;
 
     @ManyToOne
+    @JoinColumn(name = "table_c_fk")
     private EntityC entityC;
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "entitya_entityd",
-               joinColumns = @JoinColumn(name="entityas_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="entityds_id", referencedColumnName="id"))
+    @JoinTable(name = "table_a_table_d",
+               joinColumns = @JoinColumn(name="table_a_fk", referencedColumnName="table_a_id"),
+               inverseJoinColumns = @JoinColumn(name="table_d_fk", referencedColumnName="table_d_id"))
     private Set<EntityD> entityDS = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "entitya_entitye",
-               joinColumns = @JoinColumn(name="entityas_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="entityes_id", referencedColumnName="id"))
+    @JoinTable(name = "table_a_table_e",
+               joinColumns = @JoinColumn(name="table_a_fk", referencedColumnName="table_a_id"),
+               inverseJoinColumns = @JoinColumn(name="table_e_fk", referencedColumnName="table_e_id"))
     private Set<EntityE> entityES = new HashSet<>();
 
     @OneToOne(mappedBy = "entityA")

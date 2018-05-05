@@ -19,14 +19,14 @@
     -->
     <changeSet id="20180503130844-1" author="jhipster">
         <createTable tableName="table_c">
-            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+            <column name="table_c_fk" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="field_ca" type="varchar(255)">
+            <column name="column_ca" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="field_cb" type="integer">
+            <column name="column_cb" type="integer">
                 <constraints nullable="true" />
             </column>
 

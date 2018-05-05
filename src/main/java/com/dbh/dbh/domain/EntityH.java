@@ -21,19 +21,20 @@ public class EntityH implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_h_fk")
     private Long id;
 
-    @Column(name = "field_ha")
+    @Column(name = "column_ha")
     private String fieldHA;
 
-    @Column(name = "field_hb")
+    @Column(name = "column_hb")
     private Integer fieldHB;
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "entityh_entitya",
-               joinColumns = @JoinColumn(name="entityhs_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="entityas_id", referencedColumnName="id"))
+    @JoinTable(name = "table_h_table_a",
+               joinColumns = @JoinColumn(name="table_h_fk", referencedColumnName="table_h_fk"),
+               inverseJoinColumns = @JoinColumn(name="table_a_fk", referencedColumnName="table_a_id"))
     private Set<EntityA> entityAS = new HashSet<>();
 
     public Long getId() {

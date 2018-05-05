@@ -20,12 +20,13 @@ public class EntityB implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_b_id")
     private Long id;
 
-    @Column(name = "field_ba")
+    @Column(name = "column_ba")
     private String fieldBA;
 
-    @Column(name = "field_bb")
+    @Column(name = "column_bb")
     private Integer fieldBB;
 
     @OneToOne(mappedBy = "entityB")

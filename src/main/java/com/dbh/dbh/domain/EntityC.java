@@ -22,12 +22,13 @@ public class EntityC implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_c_fk")
     private Long id;
 
-    @Column(name = "field_ca")
+    @Column(name = "column_ca")
     private String fieldCA;
 
-    @Column(name = "field_cb")
+    @Column(name = "column_cb")
     private Integer fieldCB;
 
     @OneToMany(mappedBy = "entityC")

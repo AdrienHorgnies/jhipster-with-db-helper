@@ -19,15 +19,17 @@ public class EntityG implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_g_id")
     private Long id;
 
-    @Column(name = "field_ga")
+    @Column(name = "column_ga")
     private String fieldGA;
 
-    @Column(name = "field_gb")
+    @Column(name = "column_gb")
     private Integer fieldGB;
 
     @ManyToOne
+    @JoinColumn(name = "table_a_fk")
     private EntityA entityA;
 
     public Long getId() {

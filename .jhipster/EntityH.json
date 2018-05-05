@@ -3,6 +3,9 @@
     "relationships": [
         {
             "relationshipName": "entityA",
+            "dbhJunctionTable": "table_h_table_a",
+            "dbhRelationshipId": "table_a_fk",
+            "dbhRelationshipIdOtherEntity": "table_h_fk",
             "otherEntityName": "entityA",
             "relationshipType": "many-to-many",
             "otherEntityField": "fieldAA",
@@ -13,10 +16,12 @@
     "fields": [
         {
             "fieldName": "fieldHA",
+            "dbhColumnName": "column_ha",
             "fieldType": "String"
         },
         {
             "fieldName": "fieldHB",
+            "dbhColumnName": "column_hb",
             "fieldType": "Integer"
         }
     ],
@@ -25,5 +30,7 @@
     "service": "no",
     "entityTableName": "table_h",
     "pagination": "no",
-    "searchEngine": false
+    "microserviceName": "dbhTravisTestCase",
+    "searchEngine": false,
+    "dbhIdName": "table_h_fk"
 }

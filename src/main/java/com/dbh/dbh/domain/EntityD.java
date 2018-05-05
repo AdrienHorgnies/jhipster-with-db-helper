@@ -22,12 +22,13 @@ public class EntityD implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "table_d_id")
     private Long id;
 
-    @Column(name = "field_da")
+    @Column(name = "column_da")
     private String fieldDA;
 
-    @Column(name = "field_db")
+    @Column(name = "column_db")
     private Integer fieldDB;
 
     @ManyToMany(mappedBy = "entityDS")

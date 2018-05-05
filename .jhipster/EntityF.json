@@ -3,6 +3,7 @@
     "relationships": [
         {
             "relationshipName": "entityA",
+            "dbhRelationshipId": "table_a_fk",
             "otherEntityName": "entityA",
             "relationshipType": "one-to-one",
             "otherEntityField": "fieldAA",
@@ -13,10 +14,12 @@
     "fields": [
         {
             "fieldName": "fieldFA",
+            "dbhColumnName": "column_fa",
             "fieldType": "String"
         },
         {
             "fieldName": "fieldFB",
+            "dbhColumnName": "column_fb",
             "fieldType": "Integer"
         }
     ],
@@ -25,5 +28,7 @@
     "service": "no",
     "entityTableName": "table_f",
     "pagination": "no",
-    "searchEngine": false
+    "microserviceName": "dbhTravisTestCase",
+    "searchEngine": false,
+    "dbhIdName": "table_f_id"
 }

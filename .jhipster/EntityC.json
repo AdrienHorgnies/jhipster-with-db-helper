@@ -11,10 +11,12 @@
     "fields": [
         {
             "fieldName": "fieldCA",
+            "dbhColumnName": "column_ca",
             "fieldType": "String"
         },
         {
             "fieldName": "fieldCB",
+            "dbhColumnName": "column_cb",
             "fieldType": "Integer"
         }
     ],
@@ -23,5 +25,7 @@
     "service": "no",
     "entityTableName": "table_c",
     "pagination": "no",
-    "searchEngine": false
+    "microserviceName": "dbhTravisTestCase",
+    "searchEngine": false,
+    "dbhIdName": "table_c_fk"
 }

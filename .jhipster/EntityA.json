@@ -3,6 +3,7 @@
     "relationships": [
         {
             "relationshipName": "entityB",
+            "dbhRelationshipId": "table_b_fk",
             "otherEntityName": "entityB",
             "relationshipType": "one-to-one",
             "otherEntityField": "fieldBA",
@@ -11,12 +12,16 @@
         },
         {
             "relationshipName": "entityC",
+            "dbhRelationshipId": "table_c_fk",
             "otherEntityName": "entityC",
             "relationshipType": "many-to-one",
             "otherEntityField": "fieldCA"
         },
         {
             "relationshipName": "entityD",
+            "dbhJunctionTable": "table_a_table_d",
+            "dbhRelationshipId": "table_d_fk",
+            "dbhRelationshipIdOtherEntity": "table_a_fk",
             "otherEntityName": "entityD",
             "relationshipType": "many-to-many",
             "otherEntityField": "fieldDA",
@@ -25,6 +30,9 @@
         },
         {
             "relationshipName": "entityE",
+            "dbhJunctionTable": "table_a_table_e",
+            "dbhRelationshipId": "table_e_fk",
+            "dbhRelationshipIdOtherEntity": "table_a_fk",
             "otherEntityName": "entityE",
             "relationshipType": "many-to-many",
             "otherEntityField": "fieldEA",
@@ -55,10 +63,12 @@
     "fields": [
         {
             "fieldName": "fieldAA",
+            "dbhColumnName": "column_aa",
             "fieldType": "String"
         },
         {
             "fieldName": "fieldAB",
+            "dbhColumnName": "column_ab",
             "fieldType": "Integer"
         }
     ],
@@ -66,5 +76,6 @@
     "dto": "no",
     "service": "no",
     "entityTableName": "table_a",
-    "pagination": "no"
+    "pagination": "no",
+    "dbhIdName": "table_a_id"
 }

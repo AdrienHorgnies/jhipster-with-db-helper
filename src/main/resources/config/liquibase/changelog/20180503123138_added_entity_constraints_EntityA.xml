@@ -8,38 +8,38 @@
     -->
     <changeSet id="20180503123138-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="entityb_id"
+        <addForeignKeyConstraint baseColumnNames="table_b_fk"
                                  baseTableName="table_a"
                                  constraintName="fk_entitya_entityb_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_b_id"
                                  referencedTableName="table_b"/>
 
-        <addForeignKeyConstraint baseColumnNames="entityc_id"
+        <addForeignKeyConstraint baseColumnNames="table_c_fk"
                                  baseTableName="table_a"
                                  constraintName="fk_entitya_entityc_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_c_fk"
                                  referencedTableName="table_c"/>
 
-        <addForeignKeyConstraint baseColumnNames="entityas_id"
-                                 baseTableName="entitya_entityd"
+        <addForeignKeyConstraint baseColumnNames="table_a_fk"
+                                 baseTableName="table_a_table_d"
                                  constraintName="fk_entitya_entityd_entityas_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_a_id"
                                  referencedTableName="table_a"/>
-        <addForeignKeyConstraint baseColumnNames="entityds_id"
-                                 baseTableName="entitya_entityd"
+        <addForeignKeyConstraint baseColumnNames="table_d_fk"
+                                 baseTableName="table_a_table_d"
                                  constraintName="fk_entitya_entityd_entityds_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_d_id"
                                  referencedTableName="table_d"/>
         
-        <addForeignKeyConstraint baseColumnNames="entityas_id"
-                                 baseTableName="entitya_entitye"
+        <addForeignKeyConstraint baseColumnNames="table_a_fk"
+                                 baseTableName="table_a_table_e"
                                  constraintName="fk_entitya_entitye_entityas_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_a_id"
                                  referencedTableName="table_a"/>
-        <addForeignKeyConstraint baseColumnNames="entityes_id"
-                                 baseTableName="entitya_entitye"
+        <addForeignKeyConstraint baseColumnNames="table_e_fk"
+                                 baseTableName="table_a_table_e"
                                  constraintName="fk_entitya_entitye_entityes_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_e_id"
                                  referencedTableName="table_e"/>
         
     </changeSet>

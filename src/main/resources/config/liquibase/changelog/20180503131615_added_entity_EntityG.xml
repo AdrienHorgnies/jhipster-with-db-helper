@@ -19,18 +19,18 @@
     -->
     <changeSet id="20180503131615-1" author="jhipster">
         <createTable tableName="table_g">
-            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+            <column name="table_g_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="field_ga" type="varchar(255)">
+            <column name="column_ga" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="field_gb" type="integer">
+            <column name="column_gb" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="entitya_id" type="bigint">
+            <column name="table_a_fk" type="bigint">
                 <constraints nullable="true" />
             </column>
 

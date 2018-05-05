@@ -8,10 +8,10 @@
     -->
     <changeSet id="20180503131615-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="entitya_id"
+        <addForeignKeyConstraint baseColumnNames="table_a_fk"
                                  baseTableName="table_g"
                                  constraintName="fk_entityg_entitya_id"
-                                 referencedColumnNames="id"
+                                 referencedColumnNames="table_a_id"
                                  referencedTableName="table_a"/>
 
     </changeSet>
