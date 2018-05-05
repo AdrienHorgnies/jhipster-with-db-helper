@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "entityA",
+            "otherEntityName": "entityA",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "entityB"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fieldBA",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fieldBB",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180503130734",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "table_b",
+    "pagination": "no",
+    "searchEngine": false
+}

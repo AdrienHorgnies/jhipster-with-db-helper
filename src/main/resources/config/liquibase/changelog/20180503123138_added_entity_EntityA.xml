@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity EntityA.
+    -->
+    <changeSet id="20180503123138-1" author="jhipster">
+        <createTable tableName="table_a">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="field_aa" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="field_ab" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="entityb_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="entityc_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="entitya_entityd">
+            <column name="entityds_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entityas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="entityas_id, entityds_id" tableName="entitya_entityd"/>
+        
+        <createTable tableName="entitya_entitye">
+            <column name="entityes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entityas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="entityas_id, entityes_id" tableName="entitya_entitye"/>
+        
+    </changeSet>
+</databaseChangeLog>

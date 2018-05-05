@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity EntityA.
+    -->
+    <changeSet id="20180503123138-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="entityb_id"
+                                 baseTableName="table_a"
+                                 constraintName="fk_entitya_entityb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_b"/>
+
+        <addForeignKeyConstraint baseColumnNames="entityc_id"
+                                 baseTableName="table_a"
+                                 constraintName="fk_entitya_entityc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_c"/>
+
+        <addForeignKeyConstraint baseColumnNames="entityas_id"
+                                 baseTableName="entitya_entityd"
+                                 constraintName="fk_entitya_entityd_entityas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_a"/>
+        <addForeignKeyConstraint baseColumnNames="entityds_id"
+                                 baseTableName="entitya_entityd"
+                                 constraintName="fk_entitya_entityd_entityds_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_d"/>
+        
+        <addForeignKeyConstraint baseColumnNames="entityas_id"
+                                 baseTableName="entitya_entitye"
+                                 constraintName="fk_entitya_entitye_entityas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_a"/>
+        <addForeignKeyConstraint baseColumnNames="entityes_id"
+                                 baseTableName="entitya_entitye"
+                                 constraintName="fk_entitya_entitye_entityes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_e"/>
+        
+    </changeSet>
+</databaseChangeLog>

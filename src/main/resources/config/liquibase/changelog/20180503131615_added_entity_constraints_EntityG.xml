@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity EntityG.
+    -->
+    <changeSet id="20180503131615-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="entitya_id"
+                                 baseTableName="table_g"
+                                 constraintName="fk_entityg_entitya_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="table_a"/>
+
+    </changeSet>
+</databaseChangeLog>
