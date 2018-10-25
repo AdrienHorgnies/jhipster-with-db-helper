@@ -1,0 +1,56 @@
+// JDL definition for application 'dbhTravisTestCase' generated with command 'jhipster export-jdl'
+
+entity EntityA (table_a) {
+  fieldAA String,
+  fieldAB Integer
+}
+entity EntityB (table_b) {
+  fieldBA String,
+  fieldBB Integer
+}
+entity EntityC (table_c) {
+  fieldCA String,
+  fieldCB Integer
+}
+entity EntityD (table_d) {
+  fieldDA String,
+  fieldDB Integer
+}
+entity EntityE (table_e) {
+  fieldEA String,
+  fieldEB String
+}
+entity EntityF (table_f) {
+  fieldFA String,
+  fieldFB Integer
+}
+entity EntityG (table_g) {
+  fieldGA String,
+  fieldGB Integer
+}
+entity EntityH (table_h) {
+  fieldHA String,
+  fieldHB Integer
+}
+
+relationship OneToOne {
+  EntityA{entityB(fieldBA)} to EntityB{entityA},
+  EntityF{entityA(fieldAA)} to EntityA{entityF}
+}
+relationship OneToMany {
+  EntityC{entityA} to EntityA{entityC(fieldCA)},
+  EntityA{entityG} to EntityG{entityA(fieldAA)}
+}
+relationship ManyToMany {
+  EntityA{entityD(fieldDA)} to EntityD{entityA},
+  EntityA{entityE(fieldEA)} to EntityE{entityA},
+  EntityH{entityA(fieldAA)} to EntityA{entityH}
+}
+
+microservice EntityB with dbhTravisTestCase
+microservice EntityC with dbhTravisTestCase
+microservice EntityD with dbhTravisTestCase
+microservice EntityE with dbhTravisTestCase
+microservice EntityF with dbhTravisTestCase
+microservice EntityG with dbhTravisTestCase
+microservice EntityH with dbhTravisTestCase
